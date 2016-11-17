@@ -7,15 +7,13 @@ Page({
   },
   onLoad: function(options) {
     var that = this
-    console.log(app.baseUrl + "book/"+options.id+"/contents")
     wx.request({
       url: app.baseUrl + "book/"+options.id+"/contents",
       header: {
         'Content-Type': 'application/json'
       },
       success: function(res) {
-        console.log('res');
-        console.log(res.data)
+        console.log(res.data.progress.chapters);
         that.setData({
           id: options.id,
           chapters: res.data.progress.chapters,

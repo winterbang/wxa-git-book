@@ -6,12 +6,12 @@
   <loading hidden="{{loaded}}">
     加载中...
   </loading>
-  <block wx:for="{{books}}" wx:for-item="book">
+  <block wx:for="{{books}}" wx:key="*" wx:for-item="book">
     <navigator url="detail/detail?id={{book.id}}">
       <template is="list" data="{{book}}"/>
     </navigator>
   </block>
-  <view wx:for="{{[]}}" wx:for-item="book" style="postion:relative;display:flex;flex-direction:row;height:100px;padding:10px 0 10px 10px;border-top: 1px solid #ccc;border-bottom:1px solid #ccc;">
+  <view wx:for="{{[]}}" wx:key="*" wx:for-item="book" style="postion:relative;display:flex;flex-direction:row;height:100px;padding:10px 0 10px 10px;border-top: 1px solid #ccc;border-bottom:1px solid #ccc;">
     <view style="with:80px;height:100px;margin-right:10px;background-color: #e00;">
       <image style="width: 80px;height:100%;" mode="aspectFill" src="{{book.cover.small}}"></image>
     </view>
